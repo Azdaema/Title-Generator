@@ -9,10 +9,8 @@ def topWords(stringIn):
     stringIn = "".join(l for l in stringIn if l not in "!\"#$%&()*+,-./:;<=>?@[\]^_`{|}~")
     
     # split() returns list of all the words in the string 
-    words = stringIn.split()
-      
     # Pass the words list to instance of Counter class. 
-    c = Counter(words)
+    c = Counter(stringIn.split())
     
     ignore = [
         #articles
@@ -44,4 +42,3 @@ words = topWords(fic_text)
 for w, count in words.most_common(20):
         if count > 1:
              print '%d: %s' % (count, w)
-             
